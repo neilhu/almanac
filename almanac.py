@@ -50,7 +50,7 @@ def getTimes(city):
 
 
 def weather():
-	f = urllib2.urlopen('http://api.wunderground.com/api/41ca2c546ea254c9/geolookup/conditions/q/MA/Boston.json')
+	f = urllib2.urlopen('http://api.wunderground.com/api/<api_key>/geolookup/conditions/q/MA/Boston.json')
 	json_string = f.read()
 #	print (json_string)
 	parsed_json = json.loads(json_string)
