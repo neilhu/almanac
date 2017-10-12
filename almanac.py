@@ -75,7 +75,7 @@ def weather():
 	print "Feels like: %s F<p>" % (feelslike)
 	print
 	f.close()
-	f = urllib2.urlopen('http://api.wunderground.com/api/41ca2c546ea254c9/geolookup/almanac/q/MA/Boston.json')
+	f = urllib2.urlopen('http://api.wunderground.com/api/<api_key>/geolookup/almanac/q/MA/Boston.json')
 	json_string = f.read()
 #	print (json_string)
 	parsed_json = json.loads(json_string)
@@ -87,17 +87,7 @@ def weather():
 	rtemp_high_year = parsed_json['almanac']['temp_high']['recordyear']
 	print "Record high is: %s F in %s<p>" % (rtemp_high, rtemp_high_year)
 	print
-#	f = urllib2.urlopen('http://api.wunderground.com/api/41ca2c546ea254c9/geolookup/alerts/q/MA/Boston.json')
-#	json_string = f.read()
-#	print json_string
-#	parsed_json = json.loads(json_string)
-#	pprint(parsed_json)
-#	location = parsed_json['location']['city']
-#	alert = parsed_json["alerts"][0]['description']
-#	print alert
-#	alert = parsed_json["alerts"["type"]]
-#	print "Alerts: %s" % (alert)
-#	print alert
+
 
 
 sys.stdout = open("index.html","w")
